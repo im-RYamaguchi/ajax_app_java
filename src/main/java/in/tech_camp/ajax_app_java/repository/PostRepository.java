@@ -10,7 +10,7 @@ import in.tech_camp.ajax_app_java.entity.PostEntity;
 
 @Mapper
 public interface PostRepository {
-  @Select("select * from posts")
+  @Select("select * from posts ORDER BY created_at DESC")
   List<PostEntity> findAll();
 
   @Insert("insert into posts (content) values (#{content})")
